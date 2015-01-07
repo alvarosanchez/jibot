@@ -13,7 +13,7 @@ class CapabilitiesController {
   "description": "A tiny HipChat add-on that listen for JIRA keys being mentioned on a room, and sends back the link for them plus some additional info",
   "key": "es.alvarosanchezmariscal.hipchat.jibot",
   "vendor": {
-    "url": "https://www.linkedin.com/in/mariscal",
+    "url": "https://github.com/alvarosanchez/jibot",
     "name": "Álvaro Sánchez-Mariscal"
   },
   "capabilities": {
