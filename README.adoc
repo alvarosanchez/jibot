@@ -1,0 +1,2 @@
+# jibot
+A tiny HipChat add-on that listen for JIRA keys being mentioned on a room, and sends back the link for them plus some additional info
