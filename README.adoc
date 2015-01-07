@@ -1,2 +1,13 @@
-# jibot
-A tiny HipChat add-on that listen for JIRA keys being mentioned on a room, and sends back the link for them plus some additional info
+= jibot
+
+Jibot is a tiny HipChat add-on that listen for JIRA keys being mentioned on a room, and sends back the link for them plus
+some additional info
+
+It receives webhook notifications from HipChat when a message is sent to a room. It compares the message against your
+JIRA project key pattern, and if it matches, it queries the JIRA REST API to fetch the details of the issue(s). If
+anything found, it sends back to the room few details about the issue(s).
+
+CAUTION: JIRA REST API authentication sucks. They basically support HTTP Basic Auth or OAuth 1.0a. Ideally, to avoid
+passwords being stored, OAuth should be used. However, that complicates a lot the setup of the add-on (you have to
+preconfigure it on JIRA) and the development of Jibot itself. That's why I provide the full source code so you can
+run Jibot on your server.
