@@ -33,6 +33,8 @@ grails.project.dependency.resolution = {
 
         compile "com.nimbusds:nimbus-jose-jwt:3.5"
         compile "com.github.groovy-wslite:groovy-wslite:1.1.0"
+
+        runtime 'postgresql:postgresql:8.4-702.jdbc3'
     }
 
     plugins {

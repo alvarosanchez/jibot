@@ -31,10 +31,9 @@
       </div>
       <div class="aui-page-header-main">
         <h1>Jibot, a tiny HipChat addon for JIRA</h1>
-        <!-- Place this tag where you want the button to render. -->
         <a class="github-button" href="https://github.com/alvarosanchez/jibot" data-style="mega" data-count-href="/alvarosanchez/jibot/network" data-count-api="/repos/alvarosanchez/jibot#forks_count">Fork on GitHub</a>
-
         <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://jibot.herokuapp.com" data-text="Meet Jibot: a @HipChat add-on for @JIRA written in #groovylang and #grailsfw" data-via="alvaro_sanchez" data-size="large" data-related="alvaro_sanchez" data-dnt="true">Share on Twitter</a>
+      </div>
   </header>
   <div class="aui-page-panel">
     <div class="aui-page-panel-inner">
@@ -68,9 +67,9 @@
           </p>
 
           <p>
-            This Jibot instance deployed on Heroku uses <a target="_blank" href="https://github.com/alvarosanchez/jibot/blob/master/grails-app/conf/DataSource.groovy#L34">
-            an encrypted DB</a>, but if you are concerned about how many cats I can kill using your credentials, grab the
-            source code and deploy it yourself in your servers. It's open source!
+            If using this instance deployed on Heroku, the credentials will be stored on a PostgreSQL database, so use
+            it only for testing purposes. If you are concerned about how many cats I can kill using your credentials, grab
+            the source code and deploy it yourself in your servers. It's open source!
           </p>
         </div>
 
