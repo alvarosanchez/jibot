@@ -11,6 +11,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script src="//aui-cdn.atlassian.com/aui-adg/5.8.1/js/aui.js"></script>
     <script src="https://www.hipchat.com/atlassian-connect/all-debug.js"></script>
+    <g:layoutTitle default="Jibot" />
     <g:layoutHead/>
 </head>
 
