@@ -91,9 +91,11 @@ environments {
     }
     production {
         grails.logging.jul.usebridge = false
-        // TODO: grails.serverURL = "http://www.changeme.com"
+        grails.serverURL = "https://jibot.herokuapp.com/"
     }
 }
+
+grails.app.context = '/'
 
 // log4j configuration
 log4j.main = {
