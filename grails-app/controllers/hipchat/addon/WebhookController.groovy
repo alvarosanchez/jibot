@@ -26,28 +26,31 @@ class WebhookController {
                 } catch (Exception e) {
                     projectPattern = /([A-Z]+)/
                 }
+                def pattern = /${projectPattern}\-(\d+)/
+                def matcher = text =~ pattern
 
-                String pattern = /${projectPattern}\-\d+/
-                if (text ==~ pattern) {
-                    response = jira.get(path: "/issue/${text}")
-                    String issueKey = response.json.key
-                    String issueTypeIcon = response.json.fields.issuetype.iconUrl
-                    String summary = response.json.fields.summary
-                    def resolution = response.json.fields.resolution
-                    def status = response.json.fields.status
-                    def assignee = response.json.fields.assignee
+                if (matcher) {
+                    matcher.each {
+                        String issueKey = it[0]
+                        response = jira.get(path: "/issue/${issueKey}")
+                        String issueTypeIcon = response.json.fields.issuetype.iconUrl
+                        String summary = response.json.fields.summary
+                        def resolution = response.json.fields.resolution
+                        def status = response.json.fields.status
+                        def assignee = response.json.fields.assignee
 
-                    String message = """
-                        <img src="${issueTypeIcon}"/> <strong><a href="${tenant.jiraUrl}/browse/${issueKey}">${summary}</a></strong> ${resolution?"\u2713":''}
-                        <ul>
-                            <li><em>Status</em>: <img src="${status.iconUrl}"/> ${status.name}</li>
-                            ${resolution?'': assignee ? "<li><em>Assignee</em>: <img src=\"${assignee.avatarUrls['16x16']}\" /> ${assignee.displayName}" : ''}
-                        </ul>
-                    """.trim()
+                        String message = """
+                            <img src="${issueTypeIcon}"/> <strong><a href="${tenant.jiraUrl}/browse/${issueKey}">${summary}</a></strong> ${resolution?"\u2713":''}
+                            <ul>
+                                <li><em>Status</em>: <img src="${status.iconUrl}"/> ${status.name}</li>
+                                ${resolution?'': assignee ? "<li><em>Assignee</em>: <img src=\"${assignee.avatarUrls['16x16']}\" /> ${assignee.displayName}" : ''}
+                            </ul>
+                        """.trim()
 
-                    sendRoomNotification(hipchat, roomId, message)
+                        sendRoomNotification(hipchat, roomId, message)
 
-                    render status: 200
+                        render status: 200
+                    }
                 }
             }
         }
