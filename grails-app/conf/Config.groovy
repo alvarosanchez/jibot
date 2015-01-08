@@ -91,7 +91,7 @@ environments {
     }
     production {
         grails.logging.jul.usebridge = false
-        grails.serverURL = "https://jibot.herokuapp.com/"
+        grails.serverURL = "https://jibot.herokuapp.com"
     }
 }
 
