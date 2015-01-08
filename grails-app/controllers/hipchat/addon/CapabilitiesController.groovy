@@ -13,8 +13,12 @@ class CapabilitiesController {
   "description": "A tiny HipChat add-on that listen for JIRA keys being mentioned on a room, and sends back the link for them plus some additional info",
   "key": "es.alvarosanchezmariscal.hipchat.jibot",
   "vendor": {
-    "url": "https://github.com/alvarosanchez/jibot",
+    "url": "https://www.linkedin.com/in/mariscal",
     "name": "Álvaro Sánchez-Mariscal"
+  },
+  "links": {
+    "homepage": "https://github.com/alvarosanchez/jibot",
+    "self": "${grailsApplication.config.grails.serverURL}/capabilities"
   },
   "capabilities": {
     "hipchatApiConsumer": {
